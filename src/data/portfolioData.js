@@ -290,7 +290,7 @@ export const projects = [
     accent: 'from-accent-blue to-accent-amber',
   },
   {
-    title: 'Dair Care',
+    title: 'Dairy Care',
     description:
       'A dairy management platform designed to streamline daily dairy operations, including milk collection, farmer management, payment tracking, and inventory management through mobile applications.',
     features: [
