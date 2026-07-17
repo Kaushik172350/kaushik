@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-light-50 text-base-900 dark:bg-base-900 dark:text-ink-100 transition-colors duration-300;
+}
+
+::selection {
+  background: #4F7FFF;
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-light-100 dark:bg-base-900;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4F7FFF, #22D3B8);
+  border-radius: 999px;
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #4F7FFF;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.glass {
+  @apply backdrop-blur-xl bg-white/60 dark:bg-white/[0.04] border border-black/5 dark:border-white/[0.08];
+}
+
+.glass-card {
+  @apply glass rounded-2xl transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply border-accent-blue/40 dark:border-accent-teal/30;
+  transform: translateY(-4px);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #4F7FFF 0%, #22D3B8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-eyebrow {
+  @apply font-mono text-xs tracking-[0.25em] uppercase text-accent-blue dark:text-accent-teal;
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(to right, rgba(148,163,184,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148,163,184,0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+}
+
+.btn-primary {
+  @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-stack-gradient bg-[length:200%_200%] transition-all duration-500 hover:bg-right hover:shadow-[0_0_30px_rgba(79,127,255,0.45)] active:scale-[0.97];
+}
+
+.btn-secondary {
+  @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold glass hover:border-accent-blue/50 dark:hover:border-accent-teal/50 transition-all duration-300 active:scale-[0.97];
+}
+
+.chip {
+  @apply px-3 py-1.5 rounded-full text-xs font-mono border border-black/10 dark:border-white/10 text-ink-700 dark:text-ink-300 bg-white/40 dark:bg-white/[0.03];
+}
