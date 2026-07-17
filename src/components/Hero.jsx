@@ -107,7 +107,11 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mt-9 flex flex-wrap gap-3"
           >
-            <a href="/Kaushik_Lunagariya_Resume.pdf" download className="btn-primary">
+            <a
+              href={`${import.meta.env.BASE_URL}Kaushik_Lunagariya_Resume.pdf`}
+              download
+              className="btn-primary"
+            >
               <Download size={16} /> Download Resume
             </a>
             <a href="#projects" className="btn-secondary">
@@ -131,13 +135,13 @@ export default function Hero() {
           <div className="relative rounded-[2rem] p-[3px] bg-stack-gradient shadow-2xl shadow-black/20">
             <div className="relative rounded-[calc(2rem-3px)] overflow-hidden bg-base-900">
               <img
-                src="/kaushik-photo.jpg"
+                src={`${import.meta.env.BASE_URL}kaushik-photo.jpg`}
                 alt="Kaushik Lunagariya, Senior Full Stack Developer"
                 width={900}
                 height={1448}
                 className="w-full aspect-[4/5] object-cover object-top"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-base-950/70 via-transparent to-transparent" />
             </div>
